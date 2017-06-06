@@ -1,0 +1,19 @@
+.tab-items {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  display: -webkit-box;
+  background: @item-panel-color;
+  color: @normal-font-color;
+
+  .tab-item {
+    display: block;
+    flex: 1;
+    -webkit-box-flex: 1;
+    height: 40px;
+    text-align: center;
+	}
+	.tab-active{
+		border-bottom: 2px solid @active-color;
+    color: @active-color;
+	}
+}

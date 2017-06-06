@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="description" content=" ">
+<meta name="Keywords" content="">
+<meta name="apple-mobile-web-app-title" content="飞凡网">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<title>主会场</title>
+<link rel="stylesheet" type="text/css" href="http://h5.ffan.com/zzq/h5/css/activity.css">
+</head>
+<body id='app' tracking-load='FFAN_MAIN_ACTIVITY_ENTER' tracking-auto="off" class="bodyScroll">
+<div class="g_main">
+	<div><img src="http://h5.ffan.com/zzq/h5/image/mainVenue_banner.jpg" /></div>
+    <div class="mainVenueShow">
+    	<ul class="mainVenueList">
+    		<li v-for="activity in activitys" class='clx' v-on:click="goActivityPage(activity)">
+					<div class="IcnShow">
+						<img v-bind:src="activity.pic" />
+					</div>
+            <div class="functionShow">
+							<img v-bind:src="activity.titlePic" v-if="activity.titlePic" />
+              <p v-text="activity.title" v-bind:style="{ color: activity.titleColor }" v-if="!activity.titlePic" class='actvity-base-title'></p>
+              <p v-text="activity.smallTitle"></p>
+              <div class="rulesShow">
+                  <a href="javascript:void(0)" v-on:click="showRule($event, activity)">活动规则</a>
+                  <a v-bind:class="{ 'redBtn': !activity.isOver, 'grayBtn': activity.isOver }" href="javascript:void(0)" v-text="activity.goBtnText" v-if="!activity.nourl" v-on:click="goActivityPage(activity)"></a>
+              </div>
+          </div>
+				</li>
+        </ul>
+    </div>
+    <div class='apple-inc' style='display: none;' v-bind:style="{ 'display': isIOS ? 'block' : 'none' }">本次活动与Apple Inc.无关</div>
+
+</div>
+<div class="rulesBg" v-bind:style="{ 'display': ruleActivity ? 'block' : 'none' }">
+	<div class="rulesInfoBlock">
+    	<span v-on:click="ruleActivity=null">×</span>
+      <dl class="rulesInfoTitle">
+      	<dt v-text="ruleActivity.detailTitle"></dt>
+        <dd v-text="ruleActivity.detailSmallTitle"></dd>
+      </dl>
+      <div class='rulesInfoDetail'>
+        <ul v-html="ruleActivity.detail" class="rulesInfoText">
+        </ul>
+        <a v-bind:class="{ 'redBtn': !ruleActivity.isOver, 'grayBtn': ruleActivity.isOver }" href="javascript:void(0)" v-text="ruleActivity.goBtnText" v-if="!ruleActivity.nourl" v-on:click="goActivityPage(ruleActivity)"></a>
+      </div>
+  </div>
+</div>
+<script src="http://h5.ffan.com/zzq/h5/js/lib/zepto-1.1.4.js"></script>
+<script src="http://h5.ffan.com/zzq/h5/js/lib/vue.min.js"></script>
+<script src="http://h5.ffan.com/zzq/h5/js/tool/tracking.min.js"></script>
+<script type="text/javascript">
+
+(function($, window){
+
+	var tracking = window.tracking;
+
+	var vm = new Vue({
+	  el: '#app',
+	  data: {
+	  	activitys: [],
+	  	ruleActivity: null,
+	  	isIOS: true,
+	  	showRule: function(e, activity){
+	  		e.stopPropagation();
+			setTimeout(function(){
+				$(".rulesInfoDetail").scrollTop(0)
+			});
+			vm.ruleActivity = activity;
+		},
+	  	goActivityPage: function(activity){
+	  		tracking(activity.trackingData);
+	  		if(activity.nourl){
+	  			return;
+	  		}
+	  		if(!activity.isOver){
+	  			if(activity.needParams){
+	  				var params = [];
+	  				var searchObj = searchParse();
+	  				var paramsRight = activity.needParams.split('|').every(function(key){
+	  					if(searchObj[key]===undefined){
+	  						return false;
+	  					}
+	  					params.push({
+	  						key: key,
+	  						value: searchObj[key]
+	  					})
+	  					return true;
+	  				});
+
+	  				if(paramsRight){
+	  					location.href = urlStringify({
+		  					href: activity.url,
+		  					params: params
+		  				})
+	  				}else{
+	  					alert('请首先选择广场');
+	  				}
+	  				
+	  			}else{
+	  				location.href = activity.url
+	  			}
+	  		}else{
+	  			alert('活动已经结束');
+	  		}
+	  	}
+	  }
+	})
+
+	function cookie(name) {
+	  var value = "; " + document.cookie;
+	  var parts = value.split("; " + name + "=");
+	  if (parts.length == 2) return parts.pop().split(";").shift();
+	}
+
+	function searchParse(){ 
+	  var resultObj = {}; 
+	  var search = window.location.search; 
+	  if(search && search.length > 1){ 
+	  var search = search.substring(1); 
+	  var items = search.split('&'); 
+	  for(var index = 0 ; index < items.length ; index++ ){ 
+	  if(! items[index]){ 
+	  continue; 
+	  } 
+	  var kv = items[index].split('='); 
+	  resultObj[kv[0]] = typeof kv[1] === "undefined" ? "":kv[1]; 
+	  } 
+	  } 
+	  return resultObj; 
+	} 
+
+	function urlStringify(obj){
+		var url;
+		/*if(obj.href){
+			var a = document.createElement('a');
+			a.href = obj.href;
+
+			url = a.protocol + a.pathname;
+
+			if(a.search){
+				url += a.search.length > 1 ? a.search + '&' : a.search;
+			}else{
+				url += '?';
+			}
+		}else {
+			url = '';
+		}*/
+		if(obj.href&&obj.params){
+			var a = document.createElement('a');
+			a.href = obj.href;
+
+			url = obj.href;
+			if(a.search){
+				url += a.search.length > 1 ?  '&' : '';
+			}else{
+				url+= url.lastIndexOf('?') === url.length-1  ? '' : '?';
+			}
+		}
+
+		if(obj.params){
+			url += obj.params.map(function(param){
+				return param.key + '=' + param.value;
+			}).join('&');
+		}
+		
+		return url;
+
+	}
+
+	var defaultPic = ["../image/icon_wifi.png", "../image/icon_gifit.png", "../image/icon_money.png", "../image/icon_glass.png", "../image/icon_shake.png"],
+			defaultColor = ['rgb(248, 78, 33)', 'rgb(255, 161, 0)', 'rgb(124, 94, 206)', 'rgb(21, 194, 217)', 'rgb(255, 64, 219)'],
+			goBtnTextEnum = ['', '未开始', '进入活动', '活动结束'],
+			trackingEnum = {
+				"YPTH": "FFAN_MAIN_ACTIVITY_MOVIE",
+				"YYY": "FFAN_MAIN_ACTIVITY_SHAKE",
+				"FFZF": "FFAN_MAIN_ACTIVITY_FFK",
+				"LJX": "FFAN_MAIN_ACTIVITY_HBY",
+				"JML": "FFAN_MAIN_ACTIVITY_LX"
+			};
+
+	var HOST = location.hostname.indexOf('.sit.') > -1 ? 'http://api.sit.ffan.com/' : 'http://api.ffan.com/';
+
+	$.ajax({
+	  url: HOST + 'mop/v1/landingPage',
+	  type: "GET",
+	  dataType: 'jsonp',
+	  jsonp: 'callback',
+	  timeout: 5000,
+	  success: function (result) {
+	  	if(result&&result.data&&result.data.activity){
+	  		var activitys = result.data.activity,
+	  				nowTime = new Date();
+	  		activitys.forEach(function(activity, index){
+	  			var isOver = activity.status === 3;
+	  			activity.pic = activity.pic||defaultPic[index];
+	  			activity.titleColor = defaultColor[index%5];
+	  			activity.goBtnText = isOver ? goBtnTextEnum[3] : (activity.specialButton||
+	  				goBtnTextEnum[activity.status===undefined ? 2 : activity.status]);
+	  			activity.isOver = isOver;
+	  			activity.url = isOver ? 'javascript: void(0)' : activity.url;
+	  			activity.trackingData = trackingEnum[activity.id];
+	  			/*activity.goBtnText = activity.specialButton||'立即参与';
+	  			activity.isOver = false;*/
+	  		})
+	  		vm.activitys = activitys;
+
+	  		//vm.isIOS = ;
+
+	  		alert(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()));
+	  		alert(!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/))
+	  	}
+	  },
+	  error: function(xhr){
+	    alert("网络连接超时，请检查网络连接状态");
+	  }
+	});
+
+})($, window);
+
+</script>
+</body>
+</html>

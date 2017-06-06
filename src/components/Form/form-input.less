@@ -1,0 +1,466 @@
+@input-border: solid 0.5px #efefef;
+@vcode-input-height: .35rem;
+.input-variant() {
+    width: 52%;
+    height: 100%;
+    border: none;
+    &::-webkit-input-placeholder {
+        font-size: .13rem;
+        color: #d9d9d9;
+    }
+}
+
+@number-height: .45rem;
+.number-input-libox {
+    background: #fff;
+    list-style: none;
+}
+.number-input-libox-margin{
+    margin-top:15px;   
+}
+.number-input {
+    display: block;
+    padding: 8px 0;
+    font-size: 15px;
+    border-bottom: @input-border;
+    overflow: hidden;
+    height: 49px;
+    position: relative;
+    margin-left: 15px;
+    padding-right: 15px;
+    .iconfont {
+        font-size: .13rem;
+        vertical-align: 0rem;
+        width: .13rem;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .input {
+        .input-variant();
+        padding-left: 0;
+    }
+    .forget-password {
+        float: right;
+        padding: 0 .1rem;
+        text-align: center;
+        color: #37c7fd;
+    }
+    .input-look-pass {
+        float: right;
+        text-align: center;
+        color: #d9d9d9;
+        font-size: .15rem;
+    }
+    .input-v-code {
+        height: 100%;
+        line-height: 32px;
+        border: none;
+        width: 44%;
+        
+    }
+    .input-v-code-placeholder{
+        color: #d9d9d9;
+        font-size: 13px;
+        width: 60%;
+        display: inline-block;
+    }
+    .input-v-code-num{
+        width: 60%;
+        display: inline-block;
+    }
+    .input-v-code-sendCode {
+        float: right;
+        padding-left:10px;
+        padding-right: 0;
+        width:97px;
+        height: 100%;
+        line-height: 32px;
+        border-left: solid 1px #efefef;
+        text-align: center;
+        color: #6E88D3;
+    }
+    .input-v-code-sendCode-disabled{
+        pointer-events:none;
+        color: #ccc;
+    }
+
+}
+
+.number-input.number-full {
+    display: block;
+    margin: .1rem;
+    border-bottom: none;
+    background-color: #FFF;
+    padding: .06rem 0;
+    height: @vcode-input-height;
+}
+
+.number-input.number-vcode {
+    margin: .1rem;
+    border-bottom: none;
+    line-height: @vcode-input-height;
+    .vcode-input,
+    .vcode-btn {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .vcode-input {
+        width: 65%;
+        padding-right: .2rem;
+        background-color: #FFF;
+        background-clip: content-box;
+    }
+    .vcode-btn {
+        width: 35%;
+        margin: 0;
+        line-height: @vcode-input-height;
+        font-size: .14rem;
+    }
+}
+
+.number-full .input,
+.number-vcode .input {
+    padding-left: .1rem;
+}
+
+.vcode-btn {
+    background-color: #00c8b8;
+}
+
+.input-label {
+    padding: 0 0.1rem;
+    width: 100%;
+    display: block;
+    border-bottom: @input-border;
+    height: .37rem;
+    line-height: .37rem;
+    .input {
+        .input-variant();
+    }
+    .input-label-name {
+        display: inline-block;
+        width: 77px;
+    }
+}
+
+.input-plain {
+    border-bottom: none;
+    background: #FFF;
+    width: auto;
+    margin: .1rem;
+    margin-bottom: .15rem;
+}
+
+@vcode-img-height: .36rem;
+.vcode-img-item {
+    height: @vcode-img-height;
+    line-height: @vcode-img-height;
+    .img {
+        max-height: @vcode-img-height;
+    }
+}
+
+.vcode-change {
+    margin-left: 20px;
+    ;
+}
+
+@password-level-size: .22rem;
+.password-level-wrap {
+    float: right;
+    height: 100%;
+}
+
+.password-level {
+    display: inline-block;
+    border-radius: 6px;
+    width: @password-level-size;
+    height: @password-level-size;
+    line-height: @password-level-size;
+    color: #FFF;
+    text-align: center;
+    font-size: .12rem;
+    vertical-align: middle;
+}
+
+.password-level.low {
+    background-color: #fd505f;
+}
+
+.password-level.middle {
+    background-color: #ffc23c;
+}
+
+.password-level.high {
+    background-color: #9bd234;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.number-input .password-level-wrap {
+    margin-right: 10px;
+}
+
+.input-title {
+    // padding: 0 0 0 4px;
+    width: 75px;
+    color: #656565;
+    display: inline-block;
+    // vertical-align: middle;
+}
+
+.input-close {
+    float: right;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    //background: url("./img/input_close.png") no-repeat;
+    background-size: contain;
+    margin-top: 6px;
+    line-height: normal;
+    color: #ccc;
+}
+
+.number-input .input-wrap {
+    display: inline-block;
+    width: 66%;
+    height: 100%;
+    line-height: 32px;
+}
+
+// select下拉列表
+.select-box {}
+
+.number-input .select-box-left {
+    width: auto;
+}
+
+.number-input .select-box-right {
+    border-left: none;
+    background: url('./img/arrow.png') no-repeat right center;
+    background-size: contain;
+    padding-right: 15px;
+    width:auto;
+}
+
+// 选项盒子列表
+.select-wrapout-box{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+.select-wrap-box-hide{
+    display: none;
+}
+.select-wrap-box-show{
+    display: block;
+}
+
+.select-wrap-show {
+    display: block;
+}
+
+.select-wrap-hide {
+    display: none;
+}
+
+.select-options-wrap {
+    background: #ffffff;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+    width: 100%;
+    min-height: 400px;
+    height: 70%;
+    .select-options-wrap-list{
+        overflow:auto;
+        height:90%;
+    }
+}
+
+.list-li {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-bottom: solid 1px #DDDDDD;
+    // height: 60px;
+    // line-height: 60px;
+    padding: 15px 0px;
+    margin: 0px 15px;
+    & span {
+        height: 30px;
+        line-height: 30px;
+        position: absolute;
+        top: 15px;
+        z-index: 99;
+    }
+    &-icon {
+        left: 0px;
+        width: 30px;
+        height: 30px;
+        background-size: 80% !imporent;
+        &-add {
+            background-image: url('./img/add.png');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &-name_num {
+        height: 100%;
+        line-height: 30px;
+        padding: 0px 30px;
+        padding-left: 45px;
+        & span {
+            position: relative;
+            top: 0px;
+        }
+        &-add {
+            color: #6E88D3;
+        }
+    }
+    &-limitNotify {
+        color:#ccc;
+        margin-left: 44px;
+        font-size: 10px;
+    }
+    &-select {
+        right: 0px;
+        width: 13px;
+        height: 13px;
+    }
+    &-selected {
+        background: url('./img/selected.png') no-repeat center;
+        background-size: contain;
+        z-index: 999;
+    }
+    // 银行卡添加
+    &-bank-add {
+        width: 13px;
+        right: 0px;
+        background-size: contain;
+        background: url('./img/arrow.png') no-repeat center;
+    }
+}
+
+.select-tit {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: solid 1px #DDDDDD;
+    margin: 0px 15px;
+    text-align: center;
+}
+
+.select-close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    background: url('./img/close.png') no-repeat center;
+    background-size: contain;
+    &:after {
+        display: block;
+        transform: translate(-25%, -25%);
+        width: 30px;
+        height: 30px;
+        content: '';
+    }
+}
+
+;
+// 银行卡图标
+.gongshang {
+    background: url('./img/gongshang.png') no-repeat;
+    background-size: contain;
+}
+
+.zhongnong {
+    background: url('./img/zhongnong.png') no-repeat;
+    background-size: contain;
+}
+.zhongguo {
+    background: url('./img/zhongguo.png') no-repeat;
+    background-size: contain;
+}
+.zhongjian {
+    background: url('./img/zhongjian.png') no-repeat;
+    background-size: contain;
+}
+.jiaotong {
+    background: url('./img/jiaotong.png') no-repeat;
+    background-size: contain;
+}
+.zhongxin {
+    background: url('./img/zhongxin.png') no-repeat;
+    background-size: contain;
+}
+.guangda {
+    background: url('./img/guangda.png') no-repeat;
+    background-size: contain;
+}
+.huaxia {
+    background: url('./img/huaxia.png') no-repeat;
+    background-size: contain;
+}
+.minsheng {
+    background: url('./img/minsheng.png') no-repeat;
+    background-size: contain;
+}
+.guangfa {
+    background: url('./img/guangfa.png') no-repeat;
+    background-size: contain;
+}
+.zhaoshang {
+    background: url('./img/zhaoshang.png') no-repeat;
+    background-size: contain;
+}
+.xingye {
+    background: url('./img/xingye.png') no-repeat;
+    background-size: contain;
+}
+.pufa {
+    background: url('./img/pufa.png') no-repeat;
+    background-size: contain;
+}
+.pingan {
+    background: url('./img/pingan.png') no-repeat;
+    background-size: contain;
+}
+
+
+// 模拟input
+.keyboard-input-gary{
+    color: #D9D9D9
+}
+.keyboard-input-black{
+    color: #000
+}
+.keybord-input-warp{
+    display: inline-block;
+    width: auto; height: auto;
+}
+.simulate-input{
+    line-height: 49px;
+    height: 49px;
+    color: #000;
+    margin: 0 auto;
+    min-width: 290px;
+    width: 95%;
+    font-size: 15px;
+    display: block;
+    background: #FFF;
+    border-radius: 10px;   
+    border: 1px #CCC solid; 
+    text-indent: 10px;
+}
+.simulate-input:focus{
+    border-color: #6E88D3;
+}

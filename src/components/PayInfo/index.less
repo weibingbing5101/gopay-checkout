@@ -1,0 +1,107 @@
+// 支付价格 商家信息
+.login-infor {
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 18px;
+    background: url('./img/login_infor_bg.png') left bottom repeat-x #FFFFFF;
+    background-size:8px 4.8px;
+    & span {
+        margin: 0 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    // 安全保护文字
+    &-protect {
+        color: #19C150;
+        &-icon {
+            width: 12px;
+            height: 14px;
+            background: url('./img/safe.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        &-world {
+            font-size: 12px;
+        }
+    }
+    // rmb数量
+    &-num {
+        &-sale {
+            margin-left: 5px !important;
+            font-size: 12px;
+            background: url('./img/sale.png') no-repeat;
+            /*background-size: 100% 100%;*/
+            color: #fff;
+            margin-top: 22px !important;
+            padding: 0 12px;
+            min-width: 44px;
+            /*padding-top: 4px !important;*/
+            /*// transform: skew(30deg);*/
+            width: 68px;
+            height: 16px;
+            .login-infor-num-sale-value{
+                margin-top: -3px;
+            }
+        }
+        & span {
+            margin: 0px;
+        }
+        padding: 0px 0px 0px 12px;
+        &-rmbicom {
+            font-family: "微软雅黑";
+            font-size: 30px;
+            background:url('./img/bigq.png') no-repeat;
+            background-size: 73%;
+            width: 25px;
+            height: 30px;
+            margin-top: 24px !important;
+        }
+        &-price {
+            font-size: 50px;
+            font-weight: normal;
+            /*font-family: '微软雅黑';*/
+            margin-top: 7px !important;
+        }
+    }
+    &-merchant {
+        text-align: center;
+        &-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 0.5px #efefef;
+            overflow: hidden;
+            & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-name{
+            color: #656565;
+        }
+    }
+}
+
+// 买入时的信息
+.type-buyin-infor {
+    background-image: none;
+    padding-top: 30px;
+    &-num {
+        &-word {
+            font-size: 14px;
+            margin-bottom: -10px;
+        }
+        &-help {
+            background: url('./img/help.png') no-repeat;
+            background-size: contain;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle !important;
+            margin-top: 15px !important;
+            margin-left: 10px !important;
+        }
+    }
+}
+.login-infor-num-sale-none{
+    display: none;
+}

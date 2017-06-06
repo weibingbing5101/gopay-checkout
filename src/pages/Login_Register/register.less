@@ -1,0 +1,46 @@
+.register-i-agree {
+  margin-top: .11rem;
+  font-size: .13rem;
+  color: #1b1b1b;
+  input[type="checkbox"] {
+    position: absolute;
+    left: -10000rem;
+    visibility: hidden;
+    &:checked + span i.icon-checkbox {
+      display: none;
+    }
+    &:checked + span i.icon-checkedbox {
+      display: inline-block;
+      color: #53bcc0
+    }
+  }
+  .icon-checkbox {
+    display: inline-block;
+    margin-right: 0.08rem;
+    font-size: 0.13rem;
+    width: 0.13rem;
+    line-height: 0.14rem;
+    color: #666;
+  }
+  .icon-checkedbox {
+    display: none;
+    line-height: 0.14rem;
+    margin-right: 0.08rem;
+    font-size: 0.13rem;
+    width: 0.13rem;
+    color: #666;
+  }
+  a {
+    color: #53bcc0;
+  }
+}
+
+.register-btn-area {
+  margin-top: .16rem;
+  overflow: hidden;
+}
+
+.register-tip{
+  margin-top: .11rem;
+  color: #999999;
+}

@@ -1,0 +1,128 @@
+.flashpay-pay{
+  background: #F3F3F3;
+  .checkbox-wrap{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    .checkbox{
+      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: solid 1px #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 10px;
+      .icon-duihao{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 1;
+        color: #ea2015;
+        font-size: 16px;
+      }
+    }
+    input[type="checkbox"]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+    }
+  }
+  .rule-number-wrap{
+    padding: 16px 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    .input{
+      line-height: .45rem;
+      padding: 0 .1rem;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      position: relative;
+    }
+    .money-amt{
+      float: right;
+      input{
+        text-align: right;
+        border: 0;
+      }
+    }
+    .rule-except{
+      margin-top: 10px;
+      .tip{
+        color: #999;
+        vertical-align: middle;
+      }
+      .input {
+        display: none;
+      }
+    }
+    .show-except{
+      .input{
+        display: block;
+      }
+      .checkbox-wrap{
+        .icon-duihao{
+          display: block;
+        }
+      }
+    }
+  }
+  .confirm-amt{
+    margin-top: 10px;
+    background: #fff;
+    padding: 0 10px;
+    overflow: hidden;
+    line-height: 50px;
+    .amt{
+      color:red;
+      float: right;
+    }
+  }
+  .btn-wrap{
+    padding: 0 10px;
+    margin-top: 20px;
+  }
+
+  .rules-list{
+    .rules-item{
+      li{
+        position: relative;
+        padding: 0 40px 6px 0;
+        .checkbox-wrap{
+          position: absolute;
+          right: 0;
+          top: 0;
+          .checked{
+            .icon-duihao{
+              display: block;
+            }
+          }
+        }
+        .promotion-cash{
+          float: right;
+          margin-right: 10px;
+        }
+      }
+      li.coupon{
+        padding-right: 0;
+      }
+    }
+    .rules-disabled{
+      display: none;
+    }
+  }
+
+  .disabled-use{
+    .promotion-cash{
+      color: #999;
+    }
+    .checkbox-wrap{
+      .checkbox{
+        background: #ddd;
+      }
+    }
+  }
+
+}

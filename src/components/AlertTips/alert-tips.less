@@ -1,0 +1,35 @@
+.error-alert {
+  position: fixed;
+  z-index: 12;
+  top: 50%;
+  left: 50%;
+ 	div {
+    position: absolute;
+    bottom: 50%;
+    float: left;
+	}
+	span {
+    display: block;
+    position: relative;
+    right: 50%;
+    bottom: 50%;
+    max-width: 2.8rem;
+    min-width: 1.2rem;
+    padding: 0.05rem 0.1rem;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 0.05rem;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+	}
+}
+.error-low {
+  top:auto;
+  bottom: 20%;
+}
+.error-alert.error-alert-mult{
+  span{
+    min-width: 2.8rem;
+    white-space: normal;
+  }
+}

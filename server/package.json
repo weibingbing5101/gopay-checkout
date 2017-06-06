@@ -1,0 +1,25 @@
+{
+  "name": "ffan-new-media-server",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-http-proxy": "^0.6.0",
+    "log4js": "^0.6.33"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {},
+  "scripts": {
+    "static": "pm2 start staticServer.js",
+    "proxy": "pm2 start proxyServer.js"
+  },
+  "description": "",
+  "main": "staticServer.js",
+  "keywords": [
+    "server",
+    "weixin"
+  ],
+  "author": "liubingli",
+  "license": "ISC"
+}

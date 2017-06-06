@@ -1,0 +1,265 @@
+@the-height:48px;
+
+
+/***** color ****/
+@time_span_green: #00CAB9;
+@time_span_red: #FF4D5B;
+@ta_spline: #CECECE;
+@cd_bg: #F0F0F0;
+@ta_circle:#AFAFAF;
+@cd_num_bd:#898989;
+
+.inline-block{
+  display: inline-block;
+}
+.w_40{
+    width: 40%;
+    padding: 10px;
+}
+
+
+.w_60{
+    width: 60%;
+        padding: 20px 0px;
+}
+.w_50{
+    width: 50%;
+    height: 100%;
+}
+
+.h_50{
+    height: 50%;
+    width: 100%;
+}
+
+.clear{
+    clear: both;
+}
+
+.btn-radius{
+  border-radius: 15px;
+  margin: 0;
+}
+
+.btn-disable{
+  background-color: @cd_num_bd;
+  color: white;
+}
+
+
+.fb-order-wrap{
+    top:105px;
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.time_asix_panel{
+    width: 100%;
+    overflow-y: scroll;
+}
+.time_asix{
+    display: flex;
+	-webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    height: 45px;
+    padding: 10px;
+    width: 700px;
+    box-sizing: content-box;
+    background-color: white;
+}
+
+.fb_day_span(@color:black, @pos: 0px){
+	width: 90px;
+    text-align: center;
+    height: (@the-height);
+    font-size: 18px;
+    line-height: 2em;
+    display: inline-block;
+    padding: 5px;
+    color:@color;
+    background:url(./img/timeSpan_bg.png) 2px @pos;
+    background-size: cover;
+    
+    span{
+    	display: inherit;
+    	width: 100%;
+    }
+}
+
+
+.fb_time_span{
+    height: 100%;
+    width: 70px;
+    text-align: center;
+    color: @time_span_green;
+    & div{
+        height:@the-height/2;
+
+        &:nth-child(1){
+            border-bottom:1px solid @ta_spline;
+        }
+    }
+}
+
+.fb_time_span:after{
+      content: '';
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: @time_span_green;
+
+}
+
+.fb_time_going{
+    font-size: 16px;
+    color: @time_span_red;
+}
+
+.fb_time_going:after{
+        content: '';
+            width: 100%;
+            height: 3px;
+            display: block;
+            background-color: @time_span_red;
+
+}
+
+.fb_time_no_active{
+    color: @ta_spline;
+}
+
+.fb_time_no_active:after{
+    background-color: transparent;
+}
+
+
+.fb_day_span_red{
+	.fb_day_span(white,49px);
+}
+
+.fb_day_span_white{
+	.fb_day_span(@cd_num_bd,-2px);
+}
+
+.fb_day_span_green{
+	.fb_day_span(white,-51px);
+}
+
+.fb_ta_spline{
+	border-bottom: 1px solid @ta_spline;
+    width: 20px;
+    height: (@the-height/2);
+    display: inline-block;
+}
+
+.fb_ta_circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 18px;
+    left: 3.5px;
+	background-color: @ta_circle;
+}
+
+.fb_ta_circle_active{
+	background-color: @time_span_green;
+}
+
+.fb_ta_hourglass{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 12px;
+    margin: 0 auto;
+    background: url(img/hourglass.png) 0 20px;
+    background-size:cover; 
+}
+
+.fb_ta_hourglass_active{
+    background: url(img/hourglass.png);
+    background-size:cover; 
+}
+
+.fd_cd{
+    height: 40px;
+    width: 100%;
+    background:@cd_bg ;
+    color: black;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 1em;
+
+    .cd_time_num{
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background: @cd_num_bd;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        margin: 5px;
+        border-radius: 4px;
+    }
+
+    .cd_time_colon{
+        font-size: 1.4em;
+        margin-top: -6px;
+        display: inherit;
+    }
+}
+
+
+.fb_good{
+    display: flex;
+    height: 166px;
+    border-bottom: 1px solid @ta_spline;
+    img{
+        width: 100%;
+        max-height: 136px;
+        max-width: 136px;
+    }
+
+    h3{
+        text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .fb_good{
+          height: 136px;
+    }
+}
+
+.sb_finalPrice{
+    font-size: 1.2em;
+    color: red;
+}
+
+.sb_oriPrice{
+    font-size: 1em;
+    color: @cd_num_bd;
+}
+
+
+@media screen and (max-width: 360px) {
+    .sb_finalPrice{
+        font-size: 1em;
+    }
+
+    .sb_oriPrice{
+        font-size: .8em;
+    }
+}
+
+

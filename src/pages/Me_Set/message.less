@@ -1,0 +1,111 @@
+.my-message-list{
+  .msg-list-wrap{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+  .editable{
+    .msg-list{
+      padding-right: 45px;
+      .check{
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        border: solid 1px #6a6a6a;
+        right: 16px;
+        top: 10px;
+      }
+      .checked{
+        &:after{
+          content:'\e649';
+          font-family:"iconfont" !important;
+          position: absolute;
+          top: -3px;
+          left: 2px;
+          color: #fff;
+        }
+        background: #00c8b8 ;
+        background-size: 12px;
+        border: solid 1px #00c8b8;
+      }
+    }
+  }
+  .msg-list{
+    border-bottom: solid 1px #efefef;
+    padding: 8px 28px 8px 50px;
+    position: relative;
+    overflow: hidden;
+    &:before{
+      position: absolute;
+      content: '\e674';//icon-message;
+      font-family:"iconfont" !important;
+      color: #fff;
+      display: block;
+      width: 24px;
+      height: 24px;
+      left: 16px;
+      top: 10px;
+      background: #2abfff;
+      border-radius: 20px;
+      font-size: 12px;
+      line-height: 24px;
+      text-align: center;
+    }
+    .m-font-grey{
+      margin-top: 10px;
+    }
+    .msg{
+      display: -webkit-box;
+      overflow: hidden;
+      width: 100%;
+      min-height: .16rem;
+      max-height: .46rem;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      word-break: break-all;
+    }
+    .check{
+      display: none;
+    }
+  }
+  .new{
+    &:after{
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 14px;
+      width: 5px;
+      height: 5px;
+      background: #ff5252;
+      border-radius: 4px;
+    }
+  }
+  .edit-area{
+    overflow: hidden;
+    color: #2abfff;
+    height: 45px;
+    line-height: 45px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 8px;
+    border-top: solid 1px #efefef;
+    background: #fff;
+    span{
+      display: inline-block;
+      height: 100%;
+      padding: 0 8px;
+      &:nth-child(2){
+        color: #999;
+      }
+      &:nth-child(3){
+        float: right;
+        color:#ff4a53;
+      }
+    }
+  }
+}

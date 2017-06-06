@@ -1,0 +1,248 @@
+.keybord-input{
+	display: inline-block;
+	width: auto; height: 100%;
+}
+.keybord-show {
+    display: block;
+}
+
+.keybord-hide {
+    display: none;
+}
+
+// 遮罩层
+.keybord-keywarp {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    color: #D9D9D9;
+}
+.keybord-keywarp-opacity1 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+.keybord-keywarp-opacity0 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+
+// 包裹盒子
+.keybord-box {
+    background: #fff;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.keybord-content{
+}
+
+// 按键区
+.keybord-content-ul {
+    box-shadow: 0px 0px 0.5px #ccc;
+    overflow: hidden;
+
+}
+
+.keybord-content-li {
+    font-size: 26px;
+    color: #000000;
+    float: left;
+    width: 33.333%;
+    text-align: center;
+    border:0.5px solid #ccc;
+    box-shadow: -0.5px 0.5px 0px 0px #ccc;
+    line-height: 50px;
+    font-weight: 300;
+    height: 50px;
+    &-delete {
+        background: url('./img/delete.png') no-repeat center;
+        background-size: 26px;
+    }
+}
+
+.keybord-content-title {
+    line-height: 40px;
+    text-align: center;
+    color: #999999;
+    & span {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px;
+    }
+    &-icon {
+        background: url('./img/safe.png') no-repeat center;
+        background-size: 100%;
+        width: 15px;
+        height: 20px;
+    }
+}
+
+// 关闭按钮 标题
+.keybord-title {
+    background: #F2F2F2;
+    padding: 0 10px;
+    &-close {
+        width: 14px;
+        height: 14px;
+        background: url('./img/close.png') no-repeat center;
+        background-size: 100%;
+        position: absolute;
+        display: inline-block;
+        top: 13px;
+        left: 20px;
+    }
+    &-txt {
+        width: 100%;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        box-shadow: 0px 0.5px 0px 0px #ccc;
+        -moz-box-shadow: 0px 0.5px 0px 0px #ccc;
+        -webkit-box-shadow: 0px 0.5px 0px 0px #ccc;
+        /*border-bottom: 0.5px red solid;*/
+        /*box-shadow: -0.5px 0.5px 0px 0px #ccc;*/
+        color: #000000;
+    }
+}
+
+// 密码盒子
+.keybord-password {
+    padding: 20px;
+    padding-bottom: 15px;
+    background: #F2F2F2;
+    /*border-top: 0.5px #ccc solid;*/
+    & ul {
+        overflow: hidden;
+        border: 0.5px #ccc solid;
+    }
+    & li {
+        & span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        line-height: 48px;
+        text-align: center;
+        float: left;
+        height: 48px;
+        width: 16.66%;
+        border:0.5px solid #ccc;
+        box-shadow: 0px 0px 0.5px #ccc;
+        background: #fff;
+    }
+}
+.keybord-forget-password{
+	height: 40px;
+	line-height: 25px;
+	text-align: right;
+    margin-top:5px;
+	& a{
+		color: #6888D9;
+	}
+}
+.keybord-forget-password .keybord-err{
+    float: left;
+    color: red;
+    width: 75%;
+    text-align: left;
+}
+.lever1 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+}
+
+.lever2 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+    &:nth-child(2)>span {
+        background: #000;
+    }
+}
+
+.lever3 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+    &:nth-child(2)>span {
+        background: #000;
+    }
+    &:nth-child(3)>span {
+        background: #000;
+    }
+}
+
+.lever4 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+    &:nth-child(2)>span {
+        background: #000;
+    }
+    &:nth-child(3)>span {
+        background: #000;
+    }
+    &:nth-child(4)>span {
+        background: #000;
+    }
+}
+
+.lever5 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+    &:nth-child(2)>span {
+        background: #000;
+    }
+    &:nth-child(3)>span {
+        background: #000;
+    }
+    &:nth-child(4)>span {
+        background: #000;
+    }
+    &:nth-child(5)>span {
+        background: #000;
+    }
+}
+
+;
+.lever6 li {
+    &:nth-child(1)>span {
+        background: #000;
+    }
+    &:nth-child(2)>span {
+        background: #000;
+    }
+    &:nth-child(3)>span {
+        background: #000;
+    }
+    &:nth-child(4)>span {
+        background: #000;
+    }
+    &:nth-child(5)>span {
+        background: #000;
+    }
+    &:nth-child(6)>span {
+        background: #000;
+    }
+}

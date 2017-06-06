@@ -1,0 +1,129 @@
+/*我的果仁支付主页*/
+.my-home{
+  padding-bottom: 80px;
+  .my-head-info{
+    position:relative;
+    background: #fff;
+    color:#fff;
+    padding-bottom:20px;
+    z-index: 1;
+    .head-main{
+      background: #36b6ff;
+      padding:0.20rem 15px 0 15px;
+      height:1rem;
+    }
+    .head-bg{
+      width: 100%;
+    }
+    .head-photo{
+      display:inline-block;
+      width:0.75rem;
+      height:0.75rem;
+      border:0.02rem solid #fff;
+      border-radius:50%;
+      animation:RotatePlus360 1s ease 1s;
+      -webkit-animation:RotatePlus360 1s ease 1s;
+      img{
+        width: 0.75rem;height: 0.75rem;border-radius: 50%;margin:-0.02rem 0 0  -0.02rem;
+      }
+      &:active{
+        border-color:slateblue;
+      }
+    }
+  }
+  .my-message .main-area .side-content{
+    color:#ff4a53;
+  }
+
+  .list-style{
+    margin-top: -1px;
+  }
+  .m-item-list .item{
+    .lf-area{
+      top : 9px;
+      color: #909090;
+      i{
+        font-size: 18px;
+      }
+    }
+  }
+  .home-btn-wrap{
+    margin: 10px 0;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .logout-btn{
+      background: #ff4a53;
+      color: #fff;
+    }
+  }
+}
+
+
+.login-status{
+  overflow: hidden;
+  position: relative;
+  .profile-info{
+    display: table;
+  }
+  .profile,.info{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .info{
+    padding-left: 10px;
+    width: 70%;
+  }
+  .profile{
+    width: 30%;
+    text-align: right;
+  }
+  .icon-next{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    color: #fff;
+    font-size: 22px;
+  }
+}
+
+.login-status-in{
+  .profile-info{
+    width: 100%;
+  }
+}
+.login-status-out{
+  .profile-info{
+    position: relative;
+    left: 50%;
+    width: 190px;
+    margin-left: -40px;
+  }
+  .btn{
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    width: 60%;
+    margin: 2px auto 0;
+    border:3px solid rgba(255,255,255,0.3);
+    border-radius:0.4rem;
+    overflow: hidden;
+    background: #ffd75c;
+    padding: 4px 0;
+    a{
+      &:nth-child(1){
+        border-right:1px solid #fff;
+      }
+      &:active{
+        background: rgba(255,255,255,0.5);
+      }
+      -webkit-box-flex:1;
+      display: block;
+      text-align: center;
+      line-height: 0.22rem;
+      color:#fff;
+    }
+  }
+}

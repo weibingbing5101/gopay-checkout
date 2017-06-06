@@ -1,0 +1,46 @@
+.sku-menu-box {
+  .mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 11;
+  }
+  /*选择规格*/
+  .popDiv{position: absolute;bottom:0;left:0;width:100%;background: #f8f8f8;}
+  .closeBt{position: absolute;right:0;top:-0.1rem;padding: 0.1rem;}
+  .showInfo{display: -webkit-box;}
+  .showInfo .pro{-webkit-box-flex:1;position: relative;top: -0.2rem;left:0.2rem;display: table-cell;vertical-align:middle;text-align:center;*display: block;*font-size: 65px;*font-family:Arial;width:0.74rem;height:0.74rem;border:2px solid #f8f8f8;}
+  .showInfo .pro img{vertical-align:middle;text-align: center;width: 0.7rem; height: 0.7rem}
+  .showInfo .note{-webkit-box-flex:1;margin-left: 30px;margin-top: 0.05rem;}
+  .showInfo .note .red{font-size: 0.16rem;color: #c32e26;}
+  .popDiv section{max-height: 2.28rem;overflow-y: scroll;}
+  .popDiv .selectSort{padding:0 0.1rem 0.1rem 0.1rem;}
+  .popDiv .selectSort p.tit{border-bottom: 1px solid #ccc;font-size: 0.16rem;line-height: 0.3rem;}
+  .popDiv .selectSort p.cont{overflow: hidden;}
+  .popDiv .selectSort p.cont label.disabled{color: #bbb;}
+  .popDiv .selectSort label{float:left;display: block;width: 20%;margin: 0.1rem 0 0;text-align: center;line-height: 0.3rem;font-size: 0.14rem;}
+  .popDiv .selectSort label input[type="radio"]{position: absolute;left: -2000rem;}
+  .popDiv .selectSort label input[type="radio"]:checked + span{display:block;background: #1688ba;color: #fff;}
+  .popDiv .amount{position:relative;width:100%;padding:0.1rem 0.1rem;border-top:1px solid #ccc;font-size: 0.16rem;line-height: 0.45rem;}
+  .popDiv .amount i{font-size: 30px;}
+  .popDiv .amount input{height:25px;width:0.6rem;padding: 0;margin:0 0.05rem;border-radius:0;border:1px solid #777;vertical-align: 3px;text-align: center;-webkit-appearance: none;}
+  .popDiv .amount span{position:absolute;right:0.1rem;top:0.1rem;color: #666;}
+  .popDiv .amount span.buy-amount-title {    position: relative;  right: 0;  top: 0;  color: #333;  }
+  .popDiv .amount a.pole{color: #ccc;}
+  .popDiv .amount a.pole:hover{color: #ccc;}
+  .popDiv .amount a:hover{color: #333;}
+  .subBtn{background: #fff;box-shadow: 0 0 3px #333;}
+  .iconfont{ font-size: .22rem;}
+  .subBtn a{float: none;display: block;}
+  .btn-submit {    height: .4rem;
+    line-height: .4rem;
+    padding: 0 .3rem;
+    text-align: center;
+    font-size: .18rem;
+    color: #fff;
+    background: #f9434f;}
+  .btn-disabled {background-color: #aaa}
+}

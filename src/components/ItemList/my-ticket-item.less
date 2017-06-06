@@ -1,0 +1,65 @@
+
+.ticket-item{
+  margin-bottom: 0.10rem;
+  box-shadow: 0 -3px 3px #e2e2e2,0 3px 3px #e2e2e2;
+  background: #fff;
+  .ticket-item-top{
+    position: relative;
+    display: block;
+    padding: 0.14rem 0.15rem;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    .ticket-title{
+      font-size: .16rem;
+      color: #262626;
+    }
+    .effective-date{
+      margin-top: .09rem;
+      font-size: .13rem;
+      color: #767676;
+      .icon-time{
+        font-size: .16rem;
+        &:before{
+          content: "\e62c";
+        }
+      }
+    }
+  }
+  .ticket-item-bottom{
+    position: relative;
+    display: block;
+    padding: 0.14rem 0.15rem;
+    border-bottom: 0;
+    font-size: 0.14rem;
+    line-height: 0.2rem;
+    .ticket-code{
+      .icon-ticket{
+        margin-right: 0.05rem;
+        font-size: .22rem;
+        &:before{
+          content: "\e62d";
+        }
+      }
+      .code{
+        font-size: .16rem;
+        color: #b9312a;
+      }
+    }
+  }
+  .ticket-item-info{
+    border-top: 1px dashed #dbdbdb;
+    padding: 0.14rem 0.15rem;
+    font-size: 0.14rem;
+    .refund{
+      .refund-icon{
+        margin-right: 0.05rem;
+        font-size: .16rem;
+        color: #767676;
+      }
+      .refund-cargo{
+        color: #2294ae;
+      }
+    }
+  }
+}

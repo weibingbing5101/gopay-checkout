@@ -1,0 +1,45 @@
+/**
+ * Created by wanghongguang on 16/3/11.
+ * 红色警告页面，带哭脸 - less
+ */
+
+.fail-page-bg {background-color: #ff4f4f;}
+.fail-page{
+  .cry {
+    width: 40%;
+    min-height: 120px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    background: url('./img/cry.png') no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  .cry:before{
+    content: "";
+    display: block;
+    padding-top: 150%;
+  }
+  .fail-text{
+    text-align: center;
+    color: #fff;
+    font-size: 0.3rem;
+    position: relative;
+    top: .28rem;
+  }
+  .bottom{
+    background-color: #f54444;
+    position: absolute;
+    bottom: 0;
+    height: .8rem;
+    display: block;
+    width: 100%;
+    border-top: 2px solid #e13b3b;
+    text-align: center;
+    line-height: .8rem;
+    a{
+      color: #fff;
+      font-size: .22rem;
+    }
+  }
+}

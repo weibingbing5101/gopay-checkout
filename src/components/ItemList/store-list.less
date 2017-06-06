@@ -1,0 +1,92 @@
+.store-box {
+  .clx:after{ clear: both; display: block; height: 0; visibility: hidden; content: "";}
+  .clx{*zoom: 1; }
+  .more-show-dot {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  background-color: #fff;
+  margin-top: .12rem;
+  .store-item-list {
+    padding: .14rem;
+    .store-item {
+      font-size: .16rem;
+      position: relative;
+      margin-bottom: .08rem;
+      span {
+      }
+      .store-item-title {
+        float: left;
+        color:#666;
+        width: .9rem;
+        position: absolute;
+        display: inline-block;
+      }
+      .store-item-text {
+        color:#000;
+        width: 100%;
+        padding-left: .9rem;
+        display: inline-block;
+      }
+    }
+    .store-item:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .first-store {
+    padding: .13rem;
+    .store-img {
+      float: left;
+      img {width: 80px;border: 1px solid #cccccc;}
+    }
+    .store-info {
+      float: left;
+      padding-left: .10rem;
+      width: calc(~"100% - 80px");
+      h3 {font-size: .15rem;padding-bottom: .06rem;color:#000;.more-show-dot;}
+      span {
+        display: block;
+        padding-bottom: .02rem;
+        font-size: 0.13rem;.more-show-dot;}
+      em {color:#666;margin-left: .05rem;}
+      i {color: #000;font-size: .16rem;}
+    }
+  }
+  .show-more {
+    position: relative;
+    min-height: .5rem;
+    padding: .13rem 0 .15rem;
+    border-top: 1px solid #dbdbdb;
+    font-size: .14rem;
+
+    a {display: block;}
+    .show-more-item {
+      display: block;
+      float: none;
+      padding-left: .1rem;
+      i {
+        float: left;
+        margin-right: .1rem;
+        color: #666;
+        font-size: .18rem;
+      }
+      em {
+        padding-top: .03rem;
+        display: block;
+        margin: 0 .3rem 0 .8rem;
+        margin-left: .3rem;
+        font-style: normal;
+        .more-show-dot;
+      }
+    }
+    .icon-next {
+      position: absolute;
+      right: .1rem;
+      top: .18rem;
+      float: right;
+      font-size: .15rem;
+      color: #161616;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.list-item{
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background: #fff;
+  height: 148px;
+  .list-cont{
+    display: flex;
+    border-bottom: solid 1px #dbdbdb;
+    .img-area{
+      width: 72px;
+      height: 72px;
+      img{
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+    .cont-area{
+      flex: 1;
+      padding: 15px;
+      .tit{
+        vertical-align: middle;
+        font-size: 16px;
+        margin-right: 6px;
+      }
+      .icons{
+        vertical-align: middle;
+        font-size: 0;
+        img{
+          width: 18px;
+          height: 18px;
+          margin: 0 3px;
+        }
+      }
+      .stars{
+        font-size: 0;
+        margin: 8px 0;
+        img{
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .tags{
+        color:#767676;
+        .loc{
+          float: right;
+        }
+      }
+    }
+  }
+  .list-bottom{
+    position: relative;
+    font-size: 14px;
+    line-height: 40px;
+    .icon-pay{
+      position: absolute;
+      top: 12px;
+      left: 0;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: url("./img/iconPay.jpg") no-repeat;
+      background-size: contain;
+      margin-right: 6px;
+    }
+    .tip{
+      color: #ff4e5a;
+      border: solid 1px #ff4e5a;
+      border-radius: 6px;
+      padding: 0 8px;
+      margin-left: 4px;
+    }
+    .rule{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inline-block;
+      max-width: 200px;
+      vertical-align: middle;
+      margin-left: 20px;
+    }
+  }
+}
