@@ -142,3 +142,119 @@ export { getData };
 export { postData };
 export { putData };
 export { deleteData }
+
+
+
+
+
+// 处理promise超时的请求情况
+
+// var http = require('http');
+// var url = require('url');
+
+// function get(addr) {  
+//   return new Promise(function(resolve, reject) {
+//     var url_obj = url.parse(addr);
+//     var options = {
+//       hostname: url_obj.hostname,
+//       path: url_obj.path,
+//       method: 'GET'
+//     };
+
+//     var req = http.request(options, function(res) {
+//       res.setEncoding('utf8');
+
+//       var data = '';
+//       res.on('data', function (chunk) {
+//         data += chunk;
+//       });
+//       res.on('end', function () {
+//         data = JSON.parse(data);
+//         resolve(data);
+//       });
+//     });
+
+//     req.on('error', function(e) {
+//       reject(e)
+//     });
+//     req.end();
+//   });
+// }
+
+// get('http://demos.so/result/homework.promise.userInfo').then(function (args) {
+//   return Promise.all([get('http://demos.so/result/userid=' + args['_id']), get('http://demos.so/result/student=' + args['_id'])]);
+// }).then(function (args) {
+//   console.log(args);
+// }).catch(function(err){
+//   console.log(err);
+// });
+
+
+// var http = require('http');
+// var url = require('url');
+
+// function delayPromise(ms) {
+//     return new Promise(function (resolve) {
+//         setTimeout(resolve, ms);
+//     });
+// }
+// function timeoutPromise(promise, ms) {
+//     var timeout = delayPromise(ms).then(function () {
+//             throw new Error('Operation timed out after ' + ms + ' ms');
+//         });
+//     return Promise.race([promise, timeout]);
+// }
+
+// function get(addr) {  
+//   return new Promise(function(resolve, reject) {
+//     var url_obj = url.parse(addr);
+//     var options = {
+//       hostname: url_obj.hostname,
+//       path: url_obj.path,
+//       method: 'GET'
+//     };
+
+//     var req = http.request(options, function(res) {
+//       res.setEncoding('utf8');
+
+//       var data = '';
+//       res.on('data', function (chunk) {
+//         data += chunk;
+//       });
+//       res.on('end', function () {
+//         data = JSON.parse(data);
+//         resolve(data);
+//       });
+//     });
+
+//     req.on('error', function(e) {
+//       reject(e)
+//     });
+//     req.end();
+//   });
+// }
+
+
+// timeoutPromise(get('http://demos.so/result/homework.promise.userInfo'),1000).catch(function (err) {
+//   console.log(err);
+// }).then(function (args) {
+//   return Promise.all([timeoutPromise(get('http://demos.so/result/userid=' + args['_id']), 1000), timeoutPromise(get('http://demos.so/result/student=' + args['_id']), 1000)]);
+// }).then(function (args) {
+//   console.log(args);
+// }).catch(function (err) {
+//   console.log(err);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
