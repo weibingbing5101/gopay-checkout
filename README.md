@@ -1,4 +1,4 @@
-# 果仁支付印尼项目
+# 如有问题请联系我的qq  510137831
 
 ## 使用技术
 `react reflux es6 less gulp webpack react-router html5-history nodejs iconfont`
